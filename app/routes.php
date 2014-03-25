@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-Route::get('/sayhello/{name}', function($name)
+Route::get('/resume', 'HomeController@showResume');
+
+Route::get('/portfolio', 'HomeController@showPortfolio');
+
+Route::get('/sayhello/{name}', 'HomeController@sayHello');
+
+Route::resource('posts', 'postsController');
+
+Route::get('/rolldice/{guess}', function($guess)
 {
-    if ($name == "Chris")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-        return "Hello, $name!";
-    }
+	$data = array('guess' => $guess);
+	return View::make('my-first-view')->with($data);
 });
