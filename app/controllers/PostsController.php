@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return "This is index";
 	}
 
 	/**
@@ -19,7 +19,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return "This is create";
 	}
 
 	/**
@@ -29,7 +29,7 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		return "This is store";
 	}
 
 	/**
@@ -40,7 +40,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return "This is show";
 	}
 
 	/**
@@ -51,7 +51,7 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return "This is edit";
 	}
 
 	/**
@@ -62,7 +62,7 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		return "This is update";
 	}
 
 	/**
@@ -73,7 +73,7 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		return "This is destroy";
 	}
 
 }
