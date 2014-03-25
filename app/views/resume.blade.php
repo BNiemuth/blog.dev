@@ -45,7 +45,7 @@
 					<h5>ABOUT</h5>
 				</div>
 				<div class="col-lg-6">
-					<p>I'm a developer with experience in LAMP+J. I also have skills in sales, electronics, technical support, and customer service.</p>
+					<p>I'm a junior developer with experience in LAMP+J. I also have skills in sales, electronics, technical support, and customer service.</p>
 				</div>
 				<div class="col-lg-3">
 					<p><a href="#"><i class="icon-file"></i></a> <sm>DOWNLOAD PDF</sm></p>
@@ -335,7 +335,7 @@
 					<p><t>Email</t><br/>
 						william@blacktie.co <br/>
 					</p>
-					<p><t>Adress</t><br/>
+					<p><t>Address</t><br/>
 						Some Ave. 987 <br/>
 						Postal 23892 <br/>
 						London, England. <br/>
