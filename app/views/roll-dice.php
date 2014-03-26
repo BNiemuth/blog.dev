@@ -7,6 +7,7 @@
 
 	<?=	echo "Your roll was "$random;?><br><?
 	<?= echo "Your guess was "$guess;
+	
 	<?php if ($random == $guess); ?>
 	<h1>You guessed correctly!<h1>
 		<?php else ?>
