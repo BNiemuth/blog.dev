@@ -29,7 +29,9 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return "This is store";
+		Log::info(Input::all());
+
+		return Redirect::back()->withInput();
 	}
 
 	/**

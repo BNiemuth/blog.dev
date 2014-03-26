@@ -19,7 +19,7 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
-Route::resource('posts', 'postsController');
+Route::resource('posts', 'PostsController');
 
 Route::get('/rolldice/{guess}', function($guess)
 {
