@@ -28,6 +28,7 @@ class PostsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
 	public function store()
 	{
 		$validator = Validator::make(Input::all(), Post::$rules);
@@ -36,13 +37,14 @@ class PostsController extends \BaseController {
 		{
 			return Redirect::back()->withInput()->withErrors($validator);
 		}	
-		else
+		else{
 		
-		$post = new Post();
-		$post->title = Input::get('title');
-		$post->body = Input::get('body');
-		$post->save();
-		return Redirect::action('PostsController@index');
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->save();
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 	/**
@@ -65,7 +67,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return "This is edit";
+		$post = Post::findOrFail($id);
+		return View::make('posts.edit')->with('post', $post);
 	}
 
 	/**
@@ -76,7 +79,20 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		return "This is update";
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withInput()->withErrors($validator);
+		}	
+		else{
+		
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->save();
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 	/**

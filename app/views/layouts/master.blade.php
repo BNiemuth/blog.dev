@@ -39,6 +39,8 @@
       </div>
     </div>
 
+    @yield('header')
+
     <div class="container">
 
     	@yield('content')
@@ -53,7 +55,7 @@
           </div> -->
 
     </div><!-- /.container -->
-   
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
