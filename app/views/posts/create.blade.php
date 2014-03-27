@@ -6,17 +6,17 @@
 
 @section('content')
 <div class="blog-post">
-	<form class="form-horizontal" role="form" action="{{{ action('PostsController@store') }})" method="post"
+	<form class="form-horizontal" role="form" action="{{{ action('PostsController@store') }}}" method="post"
 	  <div class="form-group">
 	    <label for="title" class="col-sm-2 control-label">Title</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="title" placeholder="Title">
+	      <input type="text" class="form-control" id="title" name="title" placeholder="Title">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">Post</label>
+	    <label for="body" class="col-sm-2 control-label">Post</label>
 	    <div class="col-sm-10">
-	      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+	      <input type="text" class="form-control" id="body" name="body" placeholder="Body">
 	    </div>
 	  </div>
 	  <div class="form-group">
@@ -30,7 +30,7 @@
 	  </div>
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">Sign in</button>
+	      <button type="submit" class="btn btn-default">Create Post</button>
 	    </div>
 	  </div>
 	</form>
