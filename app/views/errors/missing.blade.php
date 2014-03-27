@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('header')
-	<h1>Whoops you screwed up. Try again</h1>
+	<h1>I think you made a wrong turn at Albuquerque</h1>
 @stop
