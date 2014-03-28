@@ -9,8 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
-		return View::make('posts.index')->with('posts', $posts);
+		$posts = Post::orderBy('create_at', 'desc')->paginate(3);
+		return View::make('posts/index')->with(array('posts'=> $posts));
 	}
 
 	/**
@@ -88,6 +88,7 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
+			Session::flash('seccessMessage', 'Post created successfully');
 			return Redirect::action('PostsController@index');
 		}
 	}
@@ -99,6 +100,7 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return "This is destroy";
+		Post::find($id)->delete();
+		return Redirect::action('PostsController@index');
 	}
 }

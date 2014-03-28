@@ -62,5 +62,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
+		    @if (Session::has('successMessage'))
+		    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+		@endif
+		@if (Session::has('errorMessage'))
+		    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+		@endif
+    
+    @yield('bottomscript')
   </body>
 </html>

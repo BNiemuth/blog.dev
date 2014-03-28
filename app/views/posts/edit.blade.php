@@ -6,13 +6,15 @@
 
 @section('content')
 <div class="blog-post">
-	{{ Form::model($post, array('action' => array('PostsController@update',$post->id), 'method' => 'put', class'=>'form-horizontal')) }}
-	<div class="form-group {{ $errors->has('title) ? 'has-error' : '' }}">
+	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'class'=>'form-horizontal')) }}
+	<div class="form-group">
 	    {{ Form::label('title', 'Title', $attributes = array('class' => 'col-sm-2 control-label')) }}
+	    {{ $errors->has('title') ? "<p><span class='help-block'>:message</span></p>" : "" }}
 	   	<div class="col-sm-10">
-	    {{ Form::text('title', null, $attributes = array('class' => 'form-control', 'placeholder'=>'Title')) }}
-	      {{ $errors->first('title', '<p><span class="help-block">:message</span></p>') }}	    </div>
-	  </div>
+	    	{{ Form::text('body', null, $attributes = array('class' => 'form-control', 'placeholder'=>'body')) }}
+	    	{{ $errors->has('body') ? "<p><span class='help-block'>:message</span></p>" : "" }}	    
+	  	</div>
+	</div>
 
 	  <div class="form-group">
 	    <label for="body" class="col-sm-2 control-label">Body</label>
@@ -35,8 +37,5 @@
 	    </div>
 	  </div>
 	{{ Form::close() }}
-	<!-- <form class="form-horizontal" role="form" action="{{{ action('PostsController@store') }}}" method="post">
-	  
-	</form> -->
 
 @stop
