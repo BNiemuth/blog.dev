@@ -46,7 +46,6 @@ class PostsController extends \BaseController {
 			return Redirect::action('PostsController@index');
 		}
 	}
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -58,7 +57,6 @@ class PostsController extends \BaseController {
 		$post = Post::find($id);
 		return View::make('posts.show')->with('post', $post);
 	}
-
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -70,7 +68,6 @@ class PostsController extends \BaseController {
 		$post = Post::findOrFail($id);
 		return View::make('posts.edit')->with('post', $post);
 	}
-
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -94,7 +91,6 @@ class PostsController extends \BaseController {
 			return Redirect::action('PostsController@index');
 		}
 	}
-
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -105,5 +101,4 @@ class PostsController extends \BaseController {
 	{
 		return "This is destroy";
 	}
-
 }
