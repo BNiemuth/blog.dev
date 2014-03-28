@@ -52,16 +52,16 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'laraveldb',
-			'username'  => 'codeup',
-			'password'  => 'password',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
+			'mysql' => array(
+			    'driver'    => 'mysql',
+			    'host'      => isset($_SERVER['DB1_HOST']) ? $_SERVER['DB1_HOST'] : 'localhost',
+			    'database'  => isset($_SERVER['DB1_NAME']) ? $_SERVER['DB1_NAME'] : 'blog_db',
+			    'username'  => isset($_SERVER['DB1_USER']) ? $_SERVER['DB1_USER'] : 'barry@codeup.com',
+			    'password'  => isset($_SERVER['DB1_PASS']) ? $_SERVER['DB1_PASS'] : 'letmein',
+			    'charset'   => 'utf8',
+			    'collation' => 'utf8_unicode_ci',
+			    'prefix'    => '',
+			),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',

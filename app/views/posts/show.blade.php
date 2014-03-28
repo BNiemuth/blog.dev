@@ -21,7 +21,7 @@
 
 $('#btnDeletePost').on('click', function (e) {
 	e.preventDefault();
-	if(confirm('Areyou sure you want to delete this post?')) {
+	if(confirm('Are you sure you want to delete this post?')) {
 		$('#formDeletePost').submit();
 	}
 });

@@ -2,6 +2,13 @@
 
 class PostsController extends \BaseController {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->beforeFilter('auth.basic', ['except' => ['index', 'show']]);
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::orderBy('create_at', 'desc')->paginate(3);
+		$posts = Post::orderBy('created_at', 'asc')->paginate(3);
 		return View::make('posts/index')->with(array('posts'=> $posts));
 	}
 
@@ -20,7 +27,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		return View::make('posts/create')->with('post', new Post());
 	}
 
 	/**
@@ -35,14 +42,17 @@ class PostsController extends \BaseController {
 
 		if ($validator->fails())
 		{
+			Session::flash('errorMessage', 'Post could not be created - See form errors');
 			return Redirect::back()->withInput()->withErrors($validator);
 		}	
-		else{
+		else
+		{
 		
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
+			Session::flash('successMessage', 'Post created successfully');
 			return Redirect::action('PostsController@index');
 		}
 	}
@@ -55,7 +65,7 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
-		return View::make('posts.show')->with('post', $post);
+		return View::make('posts.show')->with(array('post' => $post));
 	}
 	/**
 	 * Show the form for editing the specified resource.
@@ -68,6 +78,7 @@ class PostsController extends \BaseController {
 		$post = Post::findOrFail($id);
 		return View::make('posts.edit')->with('post', $post);
 	}
+
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -76,19 +87,20 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		$post = Post::findOrFail($id);
 		$validator = Validator::make(Input::all(), Post::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withInput()->withErrors($validator);
 		}	
-		else{
+		else
+		{
 		
-			$post = new Post();
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
-			Session::flash('seccessMessage', 'Post created successfully');
+			Session::flash('successMessage', 'Post updated successfully');
 			return Redirect::action('PostsController@index');
 		}
 	}
