@@ -6,5 +6,5 @@
 			{{{ $post->body }}}
 		</p>
 		<hr>
-		<p><a href="{{{ action('PostsController@index') }}}">Return to posts listing</a></p>
+		<p><a href="{{{ action('PostsController@index') }}}"><h3>Return to posts listing</h3></a></p>
 @stop		

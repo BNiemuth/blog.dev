@@ -14,6 +14,6 @@
 	
 	@endforeach
 	<hr>
-		<a href="{{{ action('PostsController@create') }}}">Create New Post</a>
+		<a href="{{{ action('PostsController@create') }}}"><h3>Create New Post</h3></a>
 
 @stop
