@@ -30,7 +30,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item active" href="http://barry-blog.gopagoda.com/posts">Home</a>
           <a class="blog-nav-item" href="#">Portfolio</a>
           <a class="blog-nav-item" href="#">Resume</a>
           <a class="blog-nav-item" href="#">Ongoing Projects</a>
@@ -69,7 +69,7 @@
 		@if (Session::has('errorMessage'))
 		    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
 		@endif
-    
+
     @yield('bottomscript')
   </body>
 </html>
