@@ -5,6 +5,11 @@
 @stop
 
 @section('content')
+	{{ Form::open(array('action' => array ('PostsController@index'), 'method' => 'GET')) }}
+	{{ Form::text('search', 'Search Posts') }}
+	{{ Form::submit('Search') }}
+{{ Form::close() }}
+<h1>List Posts</h1>
 
 	@foreach ($posts as $post)
 	<div class="blog-post">
