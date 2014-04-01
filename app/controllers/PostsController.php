@@ -23,8 +23,8 @@ class PostsController extends \BaseController {
 			$posts = $query->paginate(5);
 			} else {
 				$posts = $query->where('title', 'LIKE', "%{$search}%")
-								 orWhere('body', 'LIKE', "%{$search}%")
-								 ->paginate(5);
+								->orWhere('body', 'LIKE', "%{$search}%")
+								->paginate(5);
 			}
 			return View::make('posts.index')->with(array('posts' => $posts));
 		}
