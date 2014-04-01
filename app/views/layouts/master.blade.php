@@ -9,6 +9,9 @@
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+     <link href="/css/signin.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -35,6 +38,11 @@
           <a class="blog-nav-item" href="#">Resume</a>
           <a class="blog-nav-item" href="#">Ongoing Projects</a>
           <a class="blog-nav-item" href="#">About</a>
+          @if (Auth::check())
+          <a class="blog-nav-item" href="{{{ action('HomeController@logout') }}}">Log Out</a>
+          @else
+          <a class="blog-nav-item" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+          @endif
         </nav>
       </div>
     </div>

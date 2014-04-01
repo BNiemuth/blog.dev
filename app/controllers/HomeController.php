@@ -20,4 +20,41 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function showPortfolio()
+		{
+			return View::make('hello');
+		}
+
+	public function showResume()
+		{
+			return View::make('hello');
+		}
+
+	// show the login form GET
+	public function showLogin()
+		{
+			return View::make('login');
+		}
+
+	// receives POST
+	public function doLogin()
+	{
+
+		if (Auth::attempt(array('email' => $email, 'password' => $password)))
+		{
+		    return Redirect::intended('/posts');
+		}
+		else
+		{
+   			 // login failed, go back to the login screen
+			return Redirect::back()->withInput();
+		}			
+	}
+
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::action('PostController@index');
+	}
 }
+
