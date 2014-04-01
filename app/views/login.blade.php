@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-	{{ Form::open(array('action' => 'PostsController@store', 'class' => 'form-signin', 'role' => 'form')) }}
+	{{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-signin', 'role' => 'form')) }}
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
+        <input type="email" class="form-control" placeholder="Email address" required autofocus name="email">
+        <input type="password" class="form-control" placeholder="Password" required name="password">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>

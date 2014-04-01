@@ -14,9 +14,4 @@ class Post extends BaseModel {
     'body'       => 'required|max:10000'
 );
 
-	public function getCreatedAtAttribute($value)
-	{
-		$utc = Carbon::createFromFormat($this->getDateFormat(), $value);
-		return $utc->setTimezone('America/Chicago');
-	}
 }

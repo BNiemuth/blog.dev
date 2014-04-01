@@ -40,7 +40,7 @@ class HomeController extends BaseController {
 	public function doLogin()
 	{
 
-		if (Auth::attempt(array('email' => $email, 'password' => $password)))
+		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
 		{
 		    return Redirect::intended('/posts');
 		}
