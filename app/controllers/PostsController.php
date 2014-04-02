@@ -21,15 +21,14 @@ class PostsController extends \BaseController {
 		if (is_null($search))
 		{
 			$posts = $query->paginate(5);
-			} else {
+		} else 
+			{
 				$posts = $query->where('title', 'LIKE', "%{$search}%")
 								->orWhere('body', 'LIKE', "%{$search}%")
 								->paginate(5);
 			}
 			return View::make('posts.index')->with(array('posts' => $posts));
-		}
-
-
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -59,10 +58,21 @@ class PostsController extends \BaseController {
 		{
 		
 			$post = new Post();
-			$post->user_id = 1;
+			$post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+
+			if (Input::hasFile('image'))
+			{
+				$destinationPath = public_path() . '/uploads/';
+				$extension = Input::file('image')->getClientOriginalExtension();
+				$filename = uniqid() . $extension;
+				Input::file('image')->move($destinationPath, $filename);
+				$post->post_image = '/uploads/' . $filename;
+			}
+
 			$post->save();
+
 			Session::flash('successMessage', 'Post created successfully');
 			return Redirect::action('PostsController@index');
 		}

@@ -33,7 +33,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="http://barry-blog.gopagoda.com/posts">Home</a>
+          <a class="blog-nav-item active" href="{{{ action('PostsController@index') }}}">Home</a>
           <a class="blog-nav-item" href="#">Portfolio</a>
           <a class="blog-nav-item" href="#">Resume</a>
           <a class="blog-nav-item" href="#">Ongoing Projects</a>

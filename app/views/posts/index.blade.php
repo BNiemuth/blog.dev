@@ -6,7 +6,7 @@
 
 @section('content')
 	{{ Form::open(array('action' => array ('PostsController@index'), 'method' => 'GET')) }}
-	{{ Form::text('search', 'Search Posts') }}
+	{{ Form::text('search', "", array("placeholder"=>'Search Posts')) }}
 	{{ Form::submit('Search') }}
 {{ Form::close() }}
 <h1>List Posts</h1>
@@ -14,8 +14,10 @@
 	@foreach ($posts as $post)
 	<div class="blog-post">
 		<h3 class="blog-post-title"><a href="{{{ action('PostsController@show', $post->id) }}}">{{$post->title}}</a><h3>
+		<p>By: {{{ $post->user->email }}}</p>
 		<p>{{Str::words($post->body, 10) }}</p>
-		{{ $post->created_at->format('l, F jS, Y @ h:i A') }}</p>
+		<p>{{ $post->created_at->format('l, F jS, Y @ h:i A') }}</p>
+		<img src="{{{ $post->post_image }}}">
 	</div>
 	
 	@endforeach
