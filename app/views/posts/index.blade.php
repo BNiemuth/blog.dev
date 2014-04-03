@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-	<h1 class="blog-title">Welcome to my Blog</h1>
+	<h1 class="blog-title">The Blog of Barry Niemuth</h1>
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
 	{{ Form::text('search', "", array("placeholder"=>'Search Posts')) }}
 	{{ Form::submit('Search') }}
 {{ Form::close() }}
-<h1>List Posts</h1>
+<h1>Posts</h1>
 
 	@foreach ($posts as $post)
 	<div class="blog-post">

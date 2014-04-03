@@ -11,6 +11,12 @@
 |
 */
 
+// To log Eloquent queries
+// Event::listen('illuminate.query', function($sgl, $bindings, $time) {
+// 	Log::info($sql);
+// 	Log::info(implode($bindings, ', '));
+// });
+
 Route::get('/', 'HomeController@showWelcome');
 
 Route::get('/login', 'HomeController@showLogin');
@@ -26,8 +32,8 @@ Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
 Route::resource('posts', 'PostsController');
 
-Route::get('/rolldice/{guess}', function($guess)
-{
-	$data = array('guess' => $guess);
-	return View::make('my-first-view')->with($data);
-});
+// Route::get('/rolldice/{guess}', function($guess)
+// {
+// 	$data = array('guess' => $guess);
+// 	return View::make('my-first-view')->with($data);
+// });

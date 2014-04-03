@@ -6,16 +6,22 @@
 
 @section('content')
 <div class="blog-post">
-	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'class'=>'form-horizontal')) }}
+	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT', "files" => true, 'class'=>'form-horizontal')) }}
+	
 	<div class="form-group">
 	    {{ Form::text('title', $post->title, $attributes = array('class' => 'col-sm-2 control-label', 'placeholder' => 'Title')) }}
 	    {{ $errors->has('title') ? "<p><span class='help-block'>:message</span></p>" : "" }}
-		<div class="col-sm-10">
-			{{ Form::textarea('body', $post->body, $attributes = array('class' => 'form-control', 'placeholder'=>'body')) }}
-			{{ $errors->has('body') ? "<p><span class='help-block'>:message</span></p>" : "" }}	    
-	</div>
 	</div>
 
+	<div class="col-sm-10">
+		{{ Form::textarea('body', $post->body, $attributes = array('class' => 'form-control', 'placeholder'=>'body')) }}
+		{{ $errors->has('body') ? "<p><span class='help-block'>:message</span></p>" : "" }}	    
+	</div>
+
+	<div class="btn btn-default btn-file">
+	<div input type="file">Browse</div>
+  		{{Form::file('image')}}		
+	</div>
 	  <!-- <div class="form-group">
 	    <label for="body" class="col-sm-2 control-label">Body</label>
 	    <div class="col-sm-10">
@@ -37,5 +43,5 @@
 	    </div>
 	  </div>
 	{{ Form::close() }}
-
+</div>
 @stop

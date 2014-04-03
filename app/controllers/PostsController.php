@@ -17,7 +17,7 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$search = Input::get('search');
-		$query = Post::orderBy('created_at', 'asc');
+		$query = Post::orderBy('created_at', 'desc');
 		if (is_null($search))
 		{
 			$posts = $query->paginate(5);
@@ -64,11 +64,7 @@ class PostsController extends \BaseController {
 
 			if (Input::hasFile('image'))
 			{
-				$destinationPath = public_path() . '/uploads/';
-				$extension = Input::file('image')->getClientOriginalExtension();
-				$filename = uniqid() . $extension;
-				Input::file('image')->move($destinationPath, $filename);
-				$post->post_image = '/uploads/' . $filename;
+				$post->assignImage(Input::file('image'));
 			}
 
 			$post->save();
@@ -85,6 +81,9 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		if (Auth::user()->admin = "y" || Auth::user()->) {
+
+		}
 		$post = Post::find($id);
 		return View::make('posts.show')->with(array('post' => $post));
 	}
@@ -120,6 +119,10 @@ class PostsController extends \BaseController {
 		
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+			if (Input::hasFile('image'))
+			{
+				$post->assignImage(Input::file('image'));
+			}
 			$post->save();
 			Session::flash('successMessage', 'Post updated successfully');
 			return Redirect::action('PostsController@index');

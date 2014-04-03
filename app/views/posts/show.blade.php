@@ -1,12 +1,16 @@
 @extends('layouts.master')
 
 @section('content')
+	
+	<div>
 	<h1>{{{ $post->title }}}</h1>
-		<p>
-			{{{ $post->body }}}
-		</p>
+		<p>{{{ $post->body }}}</p>
+		<p>By: {{{ $post->user->email }}}</P>
+		<p>{{ $post->created_at->format('l, F jS, Y @ h:i A') }}</p>
+		<img src="{{{ $post->post_image }}}">
 		<hr>
 		<p><a href="{{{ action('PostsController@index') }}}"><h3>Return to posts listing</h3></a></p>
+	</div>
 
 <a href="#" id="btnDeletePost">Delete</a>
 <a href="{{{ action('PostsController@edit', $post->id )}}}" class="btn">Edit</a>
@@ -17,6 +21,7 @@
 @stop
 
 @section('bottomscript')
+
 <script>
 
 $('#btnDeletePost').on('click', function (e) {
