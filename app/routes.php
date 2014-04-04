@@ -15,7 +15,7 @@
 // Event::listen('illuminate.query', function($sgl, $bindings, $time) {
 // 	Log::info($sql);
 // 	Log::info(implode($bindings, ', '));
-// });
+// }); 
 
 Route::get('/', 'HomeController@showWelcome');
 

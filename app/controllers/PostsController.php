@@ -7,6 +7,8 @@ class PostsController extends \BaseController {
 		parent::__construct();
 
 		$this->beforeFilter('auth', ['except' => ['index', 'show']]);
+
+		$this->beforeFilter('isAdmin', array('only' => array('edit', 'update', 'destroy')));
 	}
 
 	/**

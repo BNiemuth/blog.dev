@@ -34,11 +34,11 @@ App::after(function($request, $response)
 */
 Route::filter('isAdmin', function()
 {
-	$post_id = Request::sement(2);
+	$post_id = Request::segment(2);
 	$post = Post::find($post_id);
 	if (Auth::user()->admin != "y" && $post->user_id != Auth::user()->id) {
 		Session::flash('errorMessage', "You don't have the authorization to do that.");
-		return Redirect::back();
+		return Redirect::action('PostsController@index');
 	}
 });
 
