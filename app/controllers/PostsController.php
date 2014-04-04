@@ -56,7 +56,6 @@ class PostsController extends \BaseController {
 		}	
 		else
 		{
-		
 			$post = new Post();
 			$post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
@@ -81,12 +80,19 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		if (Auth::user()->admin = "y" || Auth::user()->) {
-
+		$user_rights = false;
+		$post = Post::findOrFail($id);
+		if (Auth::guest()) {
+			$user_rights = false;
 		}
-		$post = Post::find($id);
-		return View::make('posts.show')->with(array('post' => $post));
+		elseif (Auth::user()->admin == "y" || $post->user_id == Auth::user()->id) {
+			$user_rights = true;
+		}
+		$array = array('post'=>$post, 'user_rights'=>$user_rights);
+		return View::make('posts.show')->with($array);
+
 	}
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *

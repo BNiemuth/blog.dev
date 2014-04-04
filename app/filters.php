@@ -32,12 +32,20 @@ App::after(function($request, $response)
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
+Route::filter('isAdmin', function()
+{
+	$post_id = Request::sement(2);
+	$post = Post::find($post_id);
+	if (Auth::user()->admin != "y" && $post->user_id != Auth::user()->id) {
+		Session::flash('errorMessage', "You don't have the authorization to do that.");
+		return Redirect::back();
+	}
+});
 
 Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::guest('login');
 });
-
 
 Route::filter('auth.basic', function()
 {

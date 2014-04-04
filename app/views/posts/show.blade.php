@@ -12,8 +12,10 @@
 		<p><a href="{{{ action('PostsController@index') }}}"><h3>Return to posts listing</h3></a></p>
 	</div>
 
+@if ($user_rights == true)
 <a href="#" id="btnDeletePost">Delete</a>
 <a href="{{{ action('PostsController@edit', $post->id )}}}" class="btn">Edit</a>
+@endif
 
 {{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'delete', 'id'=> 'formDeletePost')) }}
 {{ Form::close() }}
