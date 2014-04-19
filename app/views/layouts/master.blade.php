@@ -38,10 +38,13 @@
           <a class="blog-nav-item" href="#">Resume</a>
           <a class="blog-nav-item" href="#">Ongoing Projects</a>
           <a class="blog-nav-item" href="#">About</a>
+
           @if (Auth::check())
           <a class="blog-nav-item" href="{{{ action('HomeController@logout') }}}">Log Out ({{{ Auth::user()->email }}})</a>
           @else
           <a class="blog-nav-item" href="{{{ action('HomeController@showLogin') }}}">Log In</a>
+          
+
           @endif
         </nav>
       </div>

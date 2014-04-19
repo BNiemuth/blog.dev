@@ -1,15 +1,20 @@
 @extends('layouts.master')
 
 @section('header')
+
 	<h1 class="blog-title">The Blog of Barry Niemuth</h1>
 @stop
 
 @section('content')
-	{{ Form::open(array('action' => array ('PostsController@index'), 'method' => 'GET')) }}
+	<hr>
 	{{ Form::text('search', "", array("placeholder"=>'Search Posts')) }}
 	{{ Form::submit('Search') }}
+	<hr>
+		<a href="{{{ action('PostsController@create') }}}"><h3>Create New Post</h3></a>
+	{{ Form::open(array('action' => array ('PostsController@index'), 'method' => 'GET')) }}
 {{ Form::close() }}
-<h1>Posts</h1>
+
+<!-- <h1>Posts</h1> -->
 
 	@foreach ($posts as $post)
 	<div class="blog-post">
@@ -23,7 +28,5 @@
 	@endforeach
 
 	{{ $posts->links() }}
-	<hr>
-		<a href="{{{ action('PostsController@create') }}}"><h3>Create New Post</h3></a>
 
 @stop

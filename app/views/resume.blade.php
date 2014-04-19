@@ -72,7 +72,7 @@
 				</div>
 				<div class="col-lg-3">
 					<p><sm>GRADUATING IN APRIL 2014</sm><br/>
-					<imp><sm>IN PROGRESS</sm></imp>
+					<!-- <imp><sm>IN PROGRESS</sm></imp> -->
 					</p>
 				</div>
 	
