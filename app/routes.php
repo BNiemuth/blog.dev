@@ -17,7 +17,7 @@
 // 	Log::info(implode($bindings, ', '));
 // }); 
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'PostsController@showIndex');
 
 Route::resource('createuser', 'UserController');
 
