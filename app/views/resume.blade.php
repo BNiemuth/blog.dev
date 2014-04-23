@@ -123,7 +123,6 @@
 		<hr>
 	</div><!--/.container -->
 
-
 	<!--AWARDS DESCRIPTION -->
 	<div class="container desc">
 		<div class="row">
