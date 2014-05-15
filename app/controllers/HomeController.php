@@ -27,7 +27,7 @@ class HomeController extends BaseController {
 
 	public function showResume()
 		{
-			return View::make('hello');
+			return View::make('resume');
 		}
 
 	// show the login form GET

@@ -29,7 +29,7 @@
 			<div class="row centered">
 				<div class="col-lg-12">
 					<h1>Barry Niemuth</h1>
-					<h3>Developer | bn3737@yahoo.com</h3>
+					<h3>Web Developer | bn3737@yahoo.com</h3>
 				</div><!--/.col-lg-12 -->
 			</div><!--/.row -->
 		</div><!--/.container -->
@@ -45,7 +45,7 @@
 					<h5>ABOUT</h5>
 				</div>
 				<div class="col-lg-6">
-					<p>I'm a junior developer with experience in LAMP+J. I also have skills in sales, electronics, technical support, and customer service.</p>
+					<p>I'm a web developer with experience in LAMP+J. I also have skills in sales, electronics, technical support, and customer service.</p>
 				</div>
 				<div class="col-lg-3">
 					<p><a href="#"><i class="icon-file"></i></a> <sm>DOWNLOAD PDF</sm></p>
@@ -71,7 +71,7 @@
 					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>GRADUATING IN APRIL 2014</sm><br/>
+					<p><sm>GRADUATED APRIL 2014</sm><br/>
 					<!-- <imp><sm>IN PROGRESS</sm></imp> -->
 					</p>
 				</div>
@@ -124,7 +124,7 @@
 	</div><!--/.container -->
 
 	<!--AWARDS DESCRIPTION -->
-	<div class="container desc">
+	<!-- <div class="container desc">
 		<div class="row">
 				<div class="col-lg-2 col-lg-offset-1">
 					<h5>AWARDS</h5>
@@ -148,13 +148,13 @@
 					<p><sm>2013</sm></p>
 				</div>
 		
-		</div><!--/.row -->
-		<br>
-	</div><!--/.container -->
+		</div><!<! -->
+		<!-- <br> -->
+	<!-- </div> --> <!--/.container -->
 	
 	
 	<!--SKILLS DESCRIPTION -->
-	<div id="skillswrap">
+	<!-- <div id="skillswrap">
 		<div class="container">
 			<div class="row">
 					<div class="col-lg-2 col-lg-offset-1">
@@ -268,18 +268,18 @@
 								];
 								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
 						</script>
-					</div>
+					</div> -->
+<!-- 
+			</div> --><!--/.row -->
+			<!-- <br>
+		</div> --><!--/.container -->
+	<!-- </div> --><!--/ #skillswrap -->
 
-			</div><!--/.row -->
-			<br>
-		</div><!--/.container -->
-	</div><!--/ #skillswrap -->
 
 
-
-	<section id="work" name="work"></section>
+	<!-- <section id="work" name="work"></section> -->
 	<!--PORTFOLIO DESCRIPTION -->
-	<div class="container desc">
+	<!-- <div class="container desc">
 		<div class="row">
 				<div class="col-lg-2 col-lg-offset-1">
 					<h5>PORTFOLIO</h5>
@@ -312,12 +312,12 @@
 					<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
 						<sm><i class="icon-tag"></i> web design</sm></more> 
 					</p>
-				</div>
+				</div> -->
 		
-		</div><!--/.row -->
-		<br>
-		<br>
-	</div><!--/.container -->
+		<!-- </div> --><!--/.row -->
+		<!-- <br> -->
+		<!-- <br> -->
+	<!-- </div> --><!--/.container -->
 	
 
 
@@ -332,25 +332,25 @@
 				</div>
 				<div class="col-lg-6">
 					<p><t>Email</t><br/>
-						william@blacktie.co <br/>
+						bn3737@yahoo.com <br/>
 					</p>
 					<p><t>Address</t><br/>
-						Some Ave. 987 <br/>
-						Postal 23892 <br/>
-						London, England. <br/>
+						14122 Old Bond st. <br/>
+						San Antonio <br/>
+						Texas, 78217 <br/>
 					</p>
 					<p><t>Phone</t><br/>
-						+55 8933-2383 <br/>
+						210-421-0690 <br/>
 					</p>
 				</div>
 				<div class="col-lg-3">
 					<p><sm>SOCIAL LINKS</sm></p>
 					<p>
-						<a href="#"><i class="icon-dribbble"></i></a>
+						<!-- <a href="#"><i class="icon-dribbble"></i></a> -->
 						<a href="#"><i class="icon-twitter"></i></a>
 						<a href="#"><i class="icon-facebook"></i></a>
 						<a href="#"><i class="icon-linkedin"></i></a>
-						<a href="#"><i class="icon-apple"></i></a>
+						<!-- <a href="#"><i class="icon-apple"></i></a> -->
 
 					</p>
 				</div>

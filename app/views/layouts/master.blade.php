@@ -35,7 +35,7 @@
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="{{{ action('PostsController@index') }}}">Home</a>
           <a class="blog-nav-item" href="#">Portfolio</a>
-          <a class="blog-nav-item" href="#">Resume</a>
+          <a class="blog-nav-item" href="layouts/resume">Resume</a>
           <!-- <a class="blog-nav-item" href="#">Ongoing Projects</a> -->
           <a class="blog-nav-item" href="#">About</a>
 
